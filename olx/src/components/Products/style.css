@@ -1,0 +1,27 @@
+.CardImg{
+    height: 250px !important;
+}
+
+.product__cardbody{
+    border-left: 5px solid #ffce32;
+}
+.productRow div{
+    padding: 5px !important;
+    margin: 0 !important;
+}
+.card{
+    margin-right: 10px !important;
+    margin-left: 10px !important;
+    -webkit-box-shadow: 0px 8px 20px 0px rgba(0, 0, 0, 0.16);
+    -moz-box-shadow: 0px 8px 20px 0px rgba(0, 0, 0, 0.16);
+    box-shadow: 0px 8px 20px 0px rgba(0, 0, 0, 0.16);
+    height: 390px;
+}
+
+.product__badge{
+    display: inline !important;
+    width: max-content;
+    position: absolute;
+    margin-left: 15px;
+    margin-top: 6px;
+}

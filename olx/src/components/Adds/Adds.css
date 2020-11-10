@@ -1,0 +1,21 @@
+.adds__container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 20px;
+}
+
+@media(min-width: 1200px){
+    .adds__container{
+        margin: 50px;
+        margin-left: 200px;
+        
+    }
+}
+
+@media(max-width: 800px){
+    .adds__container{
+        margin: 10px;
+        
+    }
+}

@@ -1,0 +1,16 @@
+.modalbtn{
+border-bottom: none !important;
+padding: 5px !important;
+}
+.modalbtn button{
+    outline: none !important;
+}
+
+.modal-content{
+    text-align: center !important;
+}
+
+.modal-dialog {
+    max-width: 500px !important;
+    margin: auto !important;
+}

@@ -1,0 +1,23 @@
+.navbar{
+    background-color: rgba(0,47,52,.03);
+}
+.faArrowLeft{
+    font-weight: 800;
+}
+a{
+    color: black !important;
+}
+.postNavbar{
+    margin-top: -12px;
+    margin-left: 20px;
+}
+
+.post__spinner{
+    width: 6rem !important;
+    height: 5rem !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 39%;
+}

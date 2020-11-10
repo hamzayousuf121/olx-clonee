@@ -1,0 +1,66 @@
+.sell__parent {
+    position: relative;
+    display: inline-block;
+    width: 104px;
+    height: 48px;
+    cursor: pointer;
+}
+
+svg:not(:root) {
+    overflow: hidden;
+}
+
+.sell__parent ._2bClX._12yOz {
+    fill: #fff;
+}
+
+.sell__parent ._2bClX {
+    stroke: none;
+    fill-rule: evenodd;
+    fill-opacity: 1;
+}
+
+.sell__parent ._2bClX._YBz- {
+    fill: #ffce32;
+}
+
+
+.sell__parent ._2bClX {
+    stroke: none;
+    fill-rule: evenodd;
+    fill-opacity: 1;
+}
+
+.sell__parent ._2bClX._3uYj7 {
+    fill: #23e5db;
+}
+
+.sell__parent ._2bClX {
+    stroke: none;
+    fill-rule: evenodd;
+    fill-opacity: 1;
+}
+.sell__parent ._2bClX.BfroU {
+    fill: #3a77ff;
+}
+.sell__parent ._2bClX {
+    stroke: none;
+    fill-rule: evenodd;
+    fill-opacity: 1;
+}
+
+
+
+.sell__parent .DrSmZ {
+    display: inline-flex;
+    align-items: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    text-transform: uppercase;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: .5px;
+    color: #002f34;
+}

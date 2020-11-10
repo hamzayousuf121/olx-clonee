@@ -1,0 +1,16 @@
+.category__Main{
+    display: flex;
+    flex-wrap: wrap;
+    border-bottom: 2px solid lightgray;
+    height: 44px;
+    align-items: center;
+    justify-content: space-around;
+    background-color: #f8f9fa!important;
+}
+.category__Main h5, p{
+    cursor: pointer;
+}
+.category__Main h5{
+    margin-bottom: 15px;
+    cursor: pointer;
+}

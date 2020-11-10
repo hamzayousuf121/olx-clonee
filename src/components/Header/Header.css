@@ -1,0 +1,134 @@
+.headerNavbar{
+    border-bottom: 2px solid lightgray;
+    position: sticky !important;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    background-color: lightgray;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    margin: 10px 0 10px 0;
+    z-index: 100;
+}
+.navbar-brand{
+    margin-right: 3rem !important;
+}
+
+.header__category{
+    margin-left: -47px;
+}
+.header__category .inputCategory{
+border: 2px solid black;
+padding: 12px;
+padding-left: 39px;
+margin-top: 27px;
+border-radius: 5px;
+}
+
+.searchIcon{
+    color: black;
+    position: relative;
+    left: 32px;
+    top: 3px;
+    font-size: 25px;
+    opacity: 0.7;
+
+}
+
+.header__caretDown{
+    color: black;
+    opacity: 0.7;
+    font-size: 32px;
+    position: relative;
+    right: 39px;
+    bottom: -3px;
+}
+.ContainerFluid{
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+.logoParent{
+    margin-top: -27px !important;
+}
+
+.header__search{
+    margin-top: -18px !important;
+}
+.header__search .inputSearch{
+        width: 91%;
+        border: 2px solid black;
+        padding: 12px;
+        border-top-left-radius: 5px;
+
+}
+.header__searchParent{
+    position: relative;
+    top: 8px;
+}
+.header__searchBtn{
+    background-color: black;
+    color: white;
+    font-size: 53px;
+    padding: 11px;
+}
+.loginParent{
+    margin-left: 91px;
+    margin-top: 12px;
+}
+.header__login{
+    color: black;
+    text-decoration: underline;
+    font-size: 20px;
+    font-weight: 600;
+    margin-left: 15px;
+    cursor: pointer;
+    margin-right: 20px;
+
+}
+
+.header__sell{
+    color: black;
+    font-size: 20px;
+    font-weight: 400;
+    border-radius: 50px;
+    margin-left: 20px;
+    background-color:lightgray;
+    padding-left: 26px;
+    padding-top: 9px;
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+    width: 104px;
+    height: 48px;
+}
+
+.rowParent div{
+padding: 0 !important;
+}
+
+
+@media(max-width: 1100px){
+   
+    .header__search .inputSearch {
+        width: 80% !important;
+    }
+    .header__caretDown{
+        display: none;
+    }
+    .rowParent{
+        display: flex;
+        flex-wrap: nowrap !important;
+    }
+}
+
+
+@media(max-width: 1029px){
+    .header__category, .header__searchParent{
+        display: none;
+    }
+}
+
+
+

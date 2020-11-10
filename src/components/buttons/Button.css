@@ -1,0 +1,14 @@
+.loginBtn{
+    width: 100%;
+    color: #002f34;
+    font-weight: 700;
+    border-radius: 4px;
+    border: 2px solid #002f34;
+    padding: 12px;
+    margin-top: 9px;
+}
+
+.detailMsg{
+    font-size: 13px;
+    font-weight: 700;
+}

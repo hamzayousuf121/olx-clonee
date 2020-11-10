@@ -1,0 +1,12 @@
+.Banner__HeroImg {
+    height: 252px;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-position: 50%;
+    background-size: cover;
+    /* position: absolute;
+    top: 112px;
+    left: 0;
+    right: 0;
+    z-index: 1; */
+}
