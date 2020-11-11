@@ -24,10 +24,12 @@ function Posts(props) {
     for (let i = 0; i < e.target.files.length; i++) {
       const newFile = e.target.files[i];
       newFile["id"] = Math.random();
+      const random = Math.random * 45545 * 54545454; 
+      const imgName = e.target.files[i].name + random
       firebase
         .storage()
         .ref()
-        .child(e.target.files[i].name)
+        .child(imgName)
         .put(e.target.files[i])
         .then(function (snapshot) {
           var progress =
@@ -46,9 +48,9 @@ function Posts(props) {
       title: "",
       price: "",
       description: "",
+      condition: "",
       image: [],
       new: false,
-      name: "",
       phone: "",
       location: "",
     },
@@ -56,7 +58,6 @@ function Posts(props) {
     validationSchema: Yup.object({
       category: Yup.string().required(),
       title: Yup.string().required(),
-      name: Yup.string().required(),
       location: Yup.string().required(),
       phone: Yup.number()
         .required()
@@ -193,24 +194,21 @@ function Posts(props) {
                     id="file"
                   />
                 </FormGroup>
+                <FormGroup>
+                  <Label for="file">Condition</Label>
+                  <Input
+                    type="select"
+                    name="condition"
+                    value={formik.values.condition}
+                    id="condition"
+                    onChange={formik.handleChange}
+                  >
+                    <option>New</option>
+                    <option>Used</option>
+                  </Input>
+                </FormGroup>
                 <hr />
                 <h3>Review Your Details</h3>
-                <FormGroup>
-                  <Label htmlFor="name">Your Name</Label>
-                  <Input
-                    type="text"
-                    name="name"
-                    id="name"
-                    placeholder="Enter Your name"
-                    value={formik.values.name}
-                    onChange={formik.handleChange}
-                  />
-
-                  {formik.errors.name && formik.touched.name && (
-                    <p className="text-danger">{formik.errors.name}</p>
-                  )}
-                </FormGroup>
-
                 <FormGroup>
                   <Label htmlFor="phone">Your Phone Number</Label>
                   <Input

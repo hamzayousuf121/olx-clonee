@@ -8,8 +8,8 @@ const BreadCrumb = ({category, productname}) => {
     <div >
       <Breadcrumb>
         <BreadcrumbItem><Link to="/"><span className='pl-4'>Home</span></Link></BreadcrumbItem>
-  <BreadcrumbItem><span >{category}</span></BreadcrumbItem>
-  <BreadcrumbItem><span >{productname}</span></BreadcrumbItem>
+        <BreadcrumbItem><span >{category}</span></BreadcrumbItem>
+        <BreadcrumbItem><span >{productname}</span></BreadcrumbItem>
       </Breadcrumb>
     </div>
   );

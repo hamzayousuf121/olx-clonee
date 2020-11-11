@@ -22,7 +22,7 @@ function Products(props) {
   const routeHandler = (item) => {
     history.push(`products/${item.title}/${item.productId}`, { product: item });
   };
-
+console.log(props.products, "New")
   return (
     <div className="container-fluid mx-3">
       <h2 className="text-dark ml-2">Fresh recommendations</h2>
@@ -34,7 +34,7 @@ function Products(props) {
             onClick={() => routeHandler(item)}
           >
             <Card>
-              {item.new && (
+              {(item.condition === 'New')  && (
                 <Badge
                   color="warning"
                   className="product__badge text-uppercase">
