@@ -9,12 +9,25 @@ import ProductDescription from './ProductDescription';
 import ProductDetailSectionTwo from './SectionTwo';
 import Featured from '../Featured/Featured'
 import {useHistory} from 'react-router-dom';
+import { useEffect } from 'react';
+import {useSelector, useDispatch} from 'react-redux'
 
 const ProductDetails = () => {
+    
     const history = useHistory();
     const [activeIndex, setActiveIndex] = useState(0);
     const [animating, setAnimating] = useState(false);
     const {location: {state:{product}}} = history;
+    const dispatch = useDispatch();
+    const store = useSelector(state => state.products );
+
+    function filterCategory(param) {
+        const filterCategory1 = store.filter(item => item.category === param)
+       dispatch({type: 'SETFILTERCATEGORY', payload: filterCategory1})
+       }
+    useEffect(() => {
+        filterCategory(product.category)
+    }, [filterCategory])
 
     const next = () => {
         if (animating) return;

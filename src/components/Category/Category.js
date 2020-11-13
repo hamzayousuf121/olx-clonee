@@ -1,5 +1,4 @@
 import React from 'react'
-
 import './Category.css';
 import {useDispatch, useSelector} from 'react-redux'
 

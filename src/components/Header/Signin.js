@@ -4,6 +4,7 @@ import Sell from './Sell';
 import {Link} from 'react-router-dom';
 import {signOut} from '../../Redux/Actions/auth';
 import {connect} from 'react-redux'
+
 function Signin(props) {
     return (
         <>
@@ -17,6 +18,11 @@ function Signin(props) {
                 <DropdownItem onClick={()=> props.signOut()}>
                   Logout
                 </DropdownItem>
+                <Link to="adds">
+                <DropdownItem>
+                  My Adds
+                </DropdownItem>
+                </Link>
                </DropdownMenu>
             </UncontrolledDropdown> 
         </>

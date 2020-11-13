@@ -15,12 +15,6 @@ const config = {
   measurementId: "G-1Q5DL21TXJ"
 };
 firebase.initializeApp(config);
-
-firebase.firestore().settings({
-  cacheSizeBytes: firebase.firestore.CACHE_SIZE_UNLIMITED
-});
-
-firebase.firestore().enablePersistence()
 export default firebase;
 // import firebase from './new'
 

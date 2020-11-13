@@ -4,6 +4,8 @@ import facebook from '../images/facebook-brands.svg';
 import twitter from '../images/twitter-square-brands.svg';
 import youtube from '../images/youtube-brands.svg'
 import instagram from '../images/instagram-brands.svg';
+import playstore from '../images/playstore.png'
+import appstore from '../images/appstore.png'
 
 function Footer() {
   return (
@@ -115,7 +117,7 @@ function Footer() {
             <section className="footer__section _2oZEg ">
               <div className="_1NJc2">
                 <span className="lastHeading">Follow Us</span>
-                <div className="_2lcRE">
+                <div className="_2lcRE mt-2">
 
                   <span className="footer__list">
                     <span className="footer__icon">
@@ -138,6 +140,10 @@ function Footer() {
                         <img src={youtube} alt="" width="20"/>
                     </span>
                   </span>
+                  <div className="mt-3">
+                <img src={appstore} alt="" className="img-fluid mr-2" />
+                <img src={playstore} alt="" className="img-fluid"/>
+              </div>
                 </div>
               </div>
             </section>

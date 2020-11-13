@@ -8,6 +8,7 @@ import Home from '../container/home';
 import ProductDetailsContainer from '../container/productDetails'
 import Userform from '../container/Userform';
 import Posts from '../components/Posts'
+import MyAdds from '../components/MyAdds';
 
 function Routing() {
     return (
@@ -23,6 +24,9 @@ function Routing() {
 
                 <Route path="/posts">
                     <Posts />
+                </Route>
+                <Route path="/adds">
+                    <MyAdds />
                 </Route>
                 <Route exact path="/">
                     <Home />

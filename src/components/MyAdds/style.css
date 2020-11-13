@@ -1,0 +1,12 @@
+.adds-btn{
+    border: 3px solid black;
+    background: white;
+    padding: 7px;
+    font-weight: 700;
+}
+.adds__heading{
+    color: darkgrey;
+}
+.adds__text{
+    color:gray;
+}

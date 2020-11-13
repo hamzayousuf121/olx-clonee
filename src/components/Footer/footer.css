@@ -1,186 +1,184 @@
 .footer__parent {
-    z-index: 8;
-    width: 100%;
-    min-height: 48px;
-    box-sizing: border-box;
+  z-index: 8;
+  width: 100%;
+  min-height: 48px;
+  box-sizing: border-box;
 }
 
 .footer__parent .footer__main {
-    display: flex;
-    background: #ebeeef;
-    padding: 16px 0 32px;
-    border-top: 1px solid rgba(0, 47, 52, .2);
-    font-size: 14px;
-    line-height: 20px;
+  display: flex;
+  background: #ebeeef;
+  padding: 16px 0 32px;
+  border-top: 1px solid rgba(0, 47, 52, 0.2);
+  font-size: 14px;
+  line-height: 20px;
 }
 
 ._3FF3q {
-    -webkit-tap-highlight-color: transparent;
-    touch-action: manipulation;
-    color: #002f34;
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
+  color: #002f34;
 }
 
 .footer__parent .section__parent {
-    margin: auto;
-    width: 100%;
-    max-width: 1200px;
-    display: flex;
-    justify-content: space-between;
+  margin: auto;
+  width: 100%;
+  max-width: 1200px;
+  display: flex;
+  justify-content: space-between;
 }
 
 .footer__parent .footer__main .footer__section {
-    font-weight: 700;
-    text-transform: uppercase;
-    flex-basis: 20%;
+  font-weight: 700;
+  text-transform: uppercase;
+  flex-basis: 20%;
 }
 
 .footer__parent .footer__main .footer__section ul {
-    padding: 0;
-    list-style: none;
-    margin: 8px 0 0;
+  padding: 0;
+  list-style: none;
+  margin: 8px 0 0;
 }
 
 .footer__parent .footer__main .footer__section {
-    font-weight: 700;
-    text-transform: uppercase;
-    flex-basis: 20%;
+  font-weight: 700;
+  text-transform: uppercase;
+  flex-basis: 20%;
 }
 
 .footer__parent .footer__main .footer__section {
-    font-weight: 700;
-    text-transform: uppercase;
-    flex-basis: 20%;
+  font-weight: 700;
+  text-transform: uppercase;
+  flex-basis: 20%;
 }
 
 .footer__parent .footer__main .footer__section .footer__list {
-    font-weight: 400;
-    text-transform: none;
-    text-decoration: none;
-    cursor: pointer;
-    font-size: 12px;
-    color: #002f34;
-    color: rgba(0, 47, 52, .64);
+  font-weight: 400;
+  text-transform: none;
+  text-decoration: none;
+  cursor: pointer;
+  font-size: 12px;
+  color: #002f34;
+  color: rgba(0, 47, 52, 0.64);
 }
 .footer__parent .footer__list {
-    text-decoration: none;
-    cursor: pointer;
+  text-decoration: none;
+  cursor: pointer;
 }
 
 .footer__parent .footer__main .footer__section._2oZEg {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .footer__parent .footer__main .footer__section {
-    font-weight: 700;
-    text-transform: uppercase;
-    flex-basis: 20%;
+  font-weight: 700;
+  text-transform: uppercase;
+  flex-basis: 20%;
 }
 
 .footer__parent .footer__main .footer__section ._1NJc2 .lastHeading {
-    display: block;
+  display: block;
 }
 
 .footer__parent .footer__main .footer__section {
-    font-weight: 700;
-    text-transform: uppercase;
-    flex-basis: 20%;
+  font-weight: 700;
+  text-transform: uppercase;
+  flex-basis: 20%;
 }
 
 .footer__parent .footer__main {
-    display: flex;
-    background: #ebeeef;
-    padding: 16px 0 32px;
-    border-top: 1px solid rgba(0, 47, 52, .2);
-    font-size: 14px;
-    line-height: 20px;
+  display: flex;
+  background: #ebeeef;
+  padding: 16px 0 32px;
+  border-top: 1px solid rgba(0, 47, 52, 0.2);
+  font-size: 14px;
+  line-height: 20px;
 }
 
 .footer__parent .footer__main .footer__section ._1NJc2 ._2lcRE .footer__list {
-    display: inline-block;
+  display: inline-block;
 }
 .footer__parent .footer__main .footer__section .footer__list {
-    font-weight: 400;
-    text-transform: none;
-    text-decoration: none;
-    cursor: pointer;
-    font-size: 12px;
-    color: #002f34;
-    color: rgba(0, 47, 52, .64);
+  font-weight: 400;
+  text-transform: none;
+  text-decoration: none;
+  cursor: pointer;
+  font-size: 12px;
+  color: #002f34;
+  color: rgba(0, 47, 52, 0.64);
 }
 
 .footer__parent .footer__list {
-    text-decoration: none;
-    cursor: pointer;
+  text-decoration: none;
+  cursor: pointer;
 }
 
 .footer__parent .footer__bottom {
-    color: #fff;
-    font-size: 12px;
-    line-height: 18px;
-    background: #002f34;
-    padding: 16px 0;
+  color: #fff;
+  font-size: 12px;
+  line-height: 18px;
+  background: #002f34;
+  padding: 16px 0;
 }
 
 .footer__parent .section__parent {
-    margin: auto;
-    width: 100%;
-    max-width: 1200px;
-    display: flex;
-    justify-content: space-between;
+  margin: auto;
+  width: 100%;
+  max-width: 1200px;
+  display: flex;
+  justify-content: space-between;
 }
 
 .footer__parent .footer__bottom {
-    color: #fff;
-    font-size: 12px;
-    line-height: 18px;
-    background: #002f34;
-    padding: 16px 0;
+  color: #fff;
+  font-size: 12px;
+  line-height: 18px;
+  background: #002f34;
+  padding: 16px 0;
 }
 
 ._3FF3q {
-    -webkit-tap-highlight-color: transparent;
-    touch-action: manipulation;
-    color: #002f34;
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
+  color: #002f34;
 }
 
 .footer__parent .footer__bottom .footer__section span {
+  font-weight: 700;
+  padding-right: 8px;
+}
+
+.footer__list span {
+  padding: 5px;
+  outline: none;
+}
+
+.footer__list {
+  outline: none;
+}
+.footer__list {
+  color: #ebeeef;
+}
+.footer__section span a {
+  color: grey !important;
+}
+@media (max-width: 600px) {
+  .footer__parent .footer__main .footer__section {
     font-weight: 700;
-    padding-right: 8px;
-}
-
-.footer__list span{
-    padding: 5px;
-    outline: none;
-}
-
-.footer__list{
-    outline: none;
-}
-.footer__list{
-color: #ebeeef;
-}
-
-@media(max-width: 600px){
-    .footer__parent .footer__main .footer__section {
-        font-weight: 700;
-        text-transform: uppercase;
-        flex-basis: 50% !important;
-    }
-    .footer__section{
-        flex-direction: column;
-        padding-left: 20px !important;
-
-    }
-    .section2{
-        display: none
-    }
-    .footer__section span a{
-        color: grey !important;
-    }
-    ._1NJc2{
-        display: block;
-        width: 250px;
-    }
+    text-transform: uppercase;
+    flex-basis: 50% !important;
+  }
+  .footer__section {
+    flex-direction: column;
+    padding-left: 20px !important;
+  }
+  .section2 {
+    display: none;
+  }
+  ._1NJc2 {
+    display: block;
+    width: 250px;
+  }
 }

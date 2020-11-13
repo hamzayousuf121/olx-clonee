@@ -9,12 +9,14 @@ import { connect } from 'react-redux';
 import {checkUser} from '../../Redux/Actions/auth'
 import Sell from './Sell.js';
 import Signin from './Signin';
-import {useSelector} from 'react-redux';
+import { getAllProducts } from "../../Redux/Actions/Product";
+
 function Header(props) {
-const currentUser = useSelector(state => state.currentUser)
+const {checkUser, getAllProducts} = props
 useEffect(() => {
-  props.checkUser()
-}, [])
+  checkUser()
+  getAllProducts()
+}, [checkUser])
 
   const [isOpen, setIsOpen] = useState(false);
 
@@ -64,6 +66,7 @@ function mapStateToProps(state) {
 function mapDispatchToProps(dispatch) {
   return {
     checkUser: () => dispatch(checkUser()),
+    getAllProducts: () => dispatch(getAllProducts()),
   }
 }
 export default connect(mapStateToProps, mapDispatchToProps)(Header)

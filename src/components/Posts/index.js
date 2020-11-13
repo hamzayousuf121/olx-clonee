@@ -60,9 +60,9 @@ function Posts(props) {
       title: Yup.string().required(),
       location: Yup.string().required(),
       phone: Yup.number()
-        .required()
-        .positive()
-        .min(11, "Minimum 11 characters"),
+        .min(11, "Minimum 11 characters")
+        .min(13, "Minimum 11 characters")
+        .required('Required'),
       price: Yup.number()
         .required()
         .positive()

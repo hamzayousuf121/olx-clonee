@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import {
   Card,
   CardImg,
@@ -10,19 +10,12 @@ import {
 import "./style.css";
 import { useHistory } from "react-router-dom";
 import { connect } from "react-redux";
-import { getAllProducts } from "../../Redux/Actions/Product";
 
 function Products(props) {
   const history = useHistory();
-
-  useEffect(() => {
-    props.getAllProducts();
-  }, []);
-
   const routeHandler = (item) => {
     history.push(`products/${item.title}/${item.productId}`, { product: item });
   };
-console.log(props.products, "New")
   return (
     <div className="container-fluid mx-3">
       <h2 className="text-dark ml-2">Fresh recommendations</h2>
@@ -67,10 +60,10 @@ function mapStateToProps(state) {
   };
 }
 
-function mapDispatchToProps(dispatch) {
-  return {
-    getAllProducts: () => dispatch(getAllProducts()),
-  };
-}
+// function mapDispatchToProps(dispatch) {
+//   return {
+//     getAllProducts: () => dispatch(getAllProducts()),
+//   };
+// }
 
-export default connect(mapStateToProps, mapDispatchToProps)(Products);
+export default connect(mapStateToProps, null)(Products);
