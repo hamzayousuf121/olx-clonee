@@ -30,7 +30,7 @@ function MyAdds() {
         if (Object.keys(currentUser.length > 0)) {
             const filterProduct = products.filter((item) => item.uid === currentUser.uid)
             setUserProducts(filterProduct)
-            if(filterProduct !== []){
+            if(!filterProduct){
                 setUserHaveProducts(true)
             }
         }

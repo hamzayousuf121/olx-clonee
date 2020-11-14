@@ -10,17 +10,29 @@ import {checkUser} from '../../Redux/Actions/auth'
 import Sell from './Sell.js';
 import Signin from './Signin';
 import { getAllProducts } from "../../Redux/Actions/Product";
+import {useHistory} from 'react-router-dom'
 
 function Header(props) {
+
 const {checkUser, getAllProducts} = props
+const history = useHistory()
+
 useEffect(() => {
   checkUser()
   getAllProducts()
-}, [checkUser])
+}, [])
 
   const [isOpen, setIsOpen] = useState(false);
+  const [searchField, setSearchField] = useState('');
 
   const toggle = () => setIsOpen(!isOpen);
+
+  const searchProduct = () => {
+    if(searchField !== ''){
+      history.push(`/search/${searchField}`)}
+    }
+
+
   return (
     <>
       <Login toggle={toggle} modal={isOpen} />
@@ -39,8 +51,8 @@ useEffect(() => {
             </div>
             <div className="col-lg-6 header__searchParent">
               <div className='header__search'>
-                <input type='text' className='inputSearch' placeholder='Find Cars Mobile Phone and More' />
-                <span className='header__searchParent'><FontAwesomeIcon icon={faSearch} size="lg" className='header__searchBtn' /></span>
+                <input type='text' className='inputSearch' onChange={(e) => setSearchField(e.target.value)}  placeholder='Find Cars Mobile Phone and More' />
+                <span className='header__searchParent' onClick={()=> searchProduct() }><FontAwesomeIcon icon={faSearch} size="lg" className='header__searchBtn' /></span>
               </div>
             </div>
             <div className="col-lg-2 col-md-3 col-sm-3">
