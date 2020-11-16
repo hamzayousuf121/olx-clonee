@@ -101,14 +101,11 @@ function Userform() {
               <button className="btn btn-success btn-block" type="submit">
                 Login
               </button>
-              <button className="btn btn-info btn-block " type="submit">
-                Register
-              </button>
+              
             </Form>
-            <div className="mb-3 text-center text-bold mt-3">
-              <Link to="/" className="">
-                Go to Home
-              </Link>
+            <div className="my-3 text-bold routeLink">
+              <Link to="/register">Register </Link>
+              <Link to="/"> Go to Home</Link>
             </div>
           </div>
         </div>

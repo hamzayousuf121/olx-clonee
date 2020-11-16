@@ -1,14 +1,16 @@
 import React from 'react'
 import './Category.css';
 import {useDispatch, useSelector} from 'react-redux'
-
+import {useHistory} from 'react-router-dom';
 function Category() {
     const dispatch = useDispatch();
+    const history =  useHistory();
     const store = useSelector(state => state.products );
 
      const filterCategory = (param) => {
             const filterCategory = store.filter(item => item.category === param)
             dispatch({type: 'SETFILTERCATEGORY', payload: filterCategory})
+            history.push(`/category/${param}`)
     }
     return (
         <div className='category__Main'>

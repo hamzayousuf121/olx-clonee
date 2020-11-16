@@ -24,8 +24,6 @@ function Index() {
     history.push(`products/${item.title}/${item.productId}`, { product: item });
   };
 
-  console.log(filterCategory, "SeacrhField");
-
   return (
     <>
       <Header />

@@ -2,7 +2,8 @@ import React from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Home from "../container/home";
 import ProductDetailsContainer from "../container/productDetails";
-import Userform from "../container/Userform";
+import Login from '../components/Auth/Login'
+import Register from '../components/Auth/Register'
 import Posts from "../components/Posts";
 import MyAdds from "../components/MyAdds";
 import Search from "../components/Search";
@@ -22,7 +23,11 @@ function Routing() {
         </Route>
 
         <Route path="/register">
-          <Userform />
+          <Register />
+        </Route>
+
+        <Route path="/login">
+          <Login />
         </Route>
 
         <Route path="/posts">
@@ -37,7 +42,7 @@ function Routing() {
           <Search />
         </Route>
         
-        <Route path="/category">
+        <Route path="/category/:category">
           <FilterCategory />
         </Route>
         <Route path="*">

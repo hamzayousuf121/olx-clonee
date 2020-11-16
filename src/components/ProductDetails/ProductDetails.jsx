@@ -27,6 +27,7 @@ const ProductDetails = () => {
        }
     useEffect(() => {
         filterCategory(product.category)
+        document.title = `${product.category} ${product.title}`;
     }, [filterCategory])
 
     const next = () => {

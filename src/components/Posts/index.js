@@ -13,12 +13,12 @@ function Posts(props) {
   const [fileDownlodedUrl, setfileDownlodedUrl] = useState([]);
   const [spinner, setSpinner] = useState(false);
   const history = useHistory();
-
+const {currentUser} = props;
   useEffect(() => {
-    if(Object.keys(props.currentUser).length < 1){
+    if(Object.keys(currentUser).length < 1){
       history.push('/')
     }
-  }, [props.currentUser])
+  }, [currentUser])
 
   const onFileChange = (e) => {
     for (let i = 0; i < e.target.files.length; i++) {
@@ -59,9 +59,9 @@ function Posts(props) {
       category: Yup.string().required(),
       title: Yup.string().required(),
       location: Yup.string().required(),
-      phone: Yup.number()
+      phone: Yup.string()
         .min(11, "Minimum 11 characters")
-        .min(13, "Minimum 11 characters")
+        .max(13, "Maximum 13 characters")
         .required('Required'),
       price: Yup.number()
         .required()
