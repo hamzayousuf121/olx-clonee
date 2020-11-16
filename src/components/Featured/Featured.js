@@ -27,7 +27,7 @@ const responsive = {
 function Featured({ deviceType, }) {
   const category = useSelector((state) => state.filterCategory);
   return (
-    <div className="featired__main">
+    <div className="featured__main">
       <h3 className="text-dark text-center">Based on Your Last Search</h3>
       <Carousel
         className="featuredParent"
@@ -36,7 +36,7 @@ function Featured({ deviceType, }) {
         showDots={true}
         responsive={responsive}
         ssr={true} // means to render carousel on server-side.
-        infinite={true}
+        infinite={false}
         autoPlay={deviceType !== "mobile" ? true : false}
         autoPlaySpeed={3000}
         keyBoardControl={true}

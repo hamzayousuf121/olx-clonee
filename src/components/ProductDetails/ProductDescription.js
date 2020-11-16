@@ -2,7 +2,7 @@ import React from 'react';
 
 function ProductDescription({product}) {
     return (
-        <div className="border p-3">
+        <div className="border p-3 productDetailsParent">
             <h4>Details</h4>
             <div className="d-flex justify-content-between border-bottom">
                 <p>Category</p>

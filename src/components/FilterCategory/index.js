@@ -18,11 +18,13 @@ function Index() {
   const products = useSelector((state) => state.products);
   const { category } = useParams();
   const history = useHistory();
-  const filterCategory = products.filter((item) => item.category === category);
+  const filterCategory = products.filter((item) => item.category.toLowerCase() === category.toLowerCase());
 
   const routeHandler = (item) => {
-    history.push(`products/${item.title}/${item.productId}`, { product: item });
-  };
+    // window.location.href = window.location.origin;
+    // history.push(`/products/${item.title}/${item.productId}`, { product: item });
+    console.log(`${window.location.origin}/products/${item.title}/${item.productId}`)
+  }
   useEffect(() => {
      document.title = category
   }, [category])

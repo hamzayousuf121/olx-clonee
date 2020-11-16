@@ -30,3 +30,19 @@
 .productDetails__phoneNum{
 margin-left: -8px;
 }
+
+
+@media only screen and (max-width: 900px) {
+    .productDetailsParent, .productsCarousel img {
+        margin-bottom: 23px;
+        margin-left: 8px;
+        margin-right: 8px;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+ .productsCarousel img {
+       height: auto !important;
+       width: 96% !important;
+  }
+}

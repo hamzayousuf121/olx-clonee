@@ -17,24 +17,6 @@
     box-shadow: 0px 8px 20px 0px rgba(0, 0, 0, 0.16);
     height: 390px;
 }
-
-.product__badge{
-    display: inline !important;
-    width: max-content;
-    position: absolute;
-    margin-left: 15px;
-    margin-top: 6px;
-}
-
-.card{
-    border-radius: 4px;
-    background: #fff;
-    box-shadow: 0 6px 10px rgba(0,0,0,.08), 0 0 6px rgba(0,0,0,.05);
-      transition: .3s transform cubic-bezier(.155,1.105,.295,1.12),.3s box-shadow,.3s -webkit-transform cubic-bezier(.155,1.105,.295,1.12);
-    padding: 14px 80px 18px 36px;
-    cursor: pointer;
-}
-
 .card:hover{
     transform: scale(1.05);
     box-shadow: 0 10px 20px rgba(0,0,0,.12), 0 4px 8px rgba(0,0,0,.06);
@@ -51,3 +33,21 @@
     -ms-transition: all 2s ease;
     transition: all 2s ease;
 }
+
+.product__badge{
+    display: inline !important;
+    width: max-content;
+    position: absolute;
+    margin-left: 15px;
+    margin-top: 6px;
+}
+
+/* .card{
+    border-radius: 4px;
+    background: #fff;
+    box-shadow: 0 6px 10px rgba(0,0,0,.08), 0 0 6px rgba(0,0,0,.05);
+      transition: .3s transform cubic-bezier(.155,1.105,.295,1.12),.3s box-shadow,.3s -webkit-transform cubic-bezier(.155,1.105,.295,1.12);
+    padding: 14px 80px 18px 36px;
+    cursor: pointer;
+} */
+
