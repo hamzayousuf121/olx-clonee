@@ -32,7 +32,7 @@ useEffect(() => {
       history.push(`/search/${searchField}`)}
     }
 
-
+console.log(props.currentUser, "Header Cuuuent USEr")
   return (
     <>
       <Login toggle={toggle} modal={isOpen} />

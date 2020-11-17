@@ -3,25 +3,46 @@ import { Form, FormGroup, Label, Input, Navbar } from "reactstrap";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
+import firebase from '../../config/firebase';
 import { useFormik } from "formik";
-
 import * as Yup from "yup";
+import {useDispatch} from 'react-redux';
+import {useHistory} from 'react-router-dom';
 import "./style.css";
 
 function Userform() {
+  const dispatch = useDispatch()
+  const history = useHistory()
   const formik = useFormik({
     initialValues: {
       email: "",
       password: "",
     },
     validationSchema: Yup.object({
-      email: Yup.string().email("Invalid email format").required("Required!"),
+      email: Yup.string().email("Invalid email format").required("Email is Required!"),
       password: Yup.string()
         .min(8, "Minimum 8 characters")
         .required("Required!"),
     }),
     onSubmit: (values) => {
-      alert(JSON.stringify(values));
+      // console.log(JSON.stringify(values));
+      const {email, password} = values;
+      firebase.auth().signInWithEmailAndPassword(email, password)
+      .then((user)=>{
+        const userID = user.user.uid;
+        firebase.database().ref("/")
+        .child(`users/${userID}`)
+        .once('value', (snapshot) => {
+          const userInfo = snapshot.val()
+          console.log(userInfo, "USer Info Login Page")
+          dispatch({ type: "SETUSER", payload: userInfo });
+           history.push("/posts");
+          console.log("firebase Login SuccesFully")
+        })
+      })
+      .catch((err)=>{
+       console.log(err, "firease Login error")
+      })
     },
   });
 

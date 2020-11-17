@@ -22,7 +22,7 @@ function Index() {
 
   const routeHandler = (item) => {
     // window.location.href = window.location.origin;
-    // history.push(`/products/${item.title}/${item.productId}`, { product: item });
+    history.replace(`/products/${item.title}/${item.productId}`, { product: item });
     console.log(`${window.location.origin}/products/${item.title}/${item.productId}`)
   }
   useEffect(() => {

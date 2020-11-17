@@ -56,15 +56,15 @@ function Signin(dispatch, history, provider) {
 
 export const checkUser = () => {
   return (dispatch) => {
-    firebase.auth().onAuthStateChanged(function (user) {
+     firebase.auth().onAuthStateChanged(function (user) {
       if (user != null) {
-        const userInfo = {
-          name: user.displayName,
-          email: user.email,
-          imageUrl: user.photoURL,
-          uid: user.uid,
-        };
-        dispatch({ type: "SETUSER", payload: userInfo });
+        firebase.database().ref("/")
+        .child(`users/${user.uid}`)
+        .once('value', (snapshot) => {
+          const userInfo = snapshot.val()
+          dispatch({ type: "SETUSER", payload: userInfo });
+        })
+      
       }
     });
   };
@@ -72,10 +72,8 @@ export const checkUser = () => {
 
 export const signOut = () => {
   return (dispatch) => {
-    firebase
-      .auth()
-      .signOut()
-      .then(function () {
+    firebase.auth()
+      .signOut().then(function () {
         dispatch({ type: "SIGNOUT" });
       })
       .catch(function (error) {

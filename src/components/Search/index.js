@@ -18,10 +18,10 @@ function Index() {
   const products = useSelector((state) => state.products);
   const { search } = useParams();
   const history = useHistory();
-  const filterCategory = products.filter((item) => item.title === search);
+  const filterCategory = products.filter((item) => item.title.toLowerCase() === search.toLowerCase());
 
   const routeHandler = (item) => {
-    history.push(`products/${item.title}/${item.productId}`, { product: item });
+    history.replace(`/products/${item.title}/${item.productId}`, { product: item });
   };
 
   return (

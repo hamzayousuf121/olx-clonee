@@ -1,69 +1,86 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 import { Form, FormGroup, Label, Input, Navbar } from "reactstrap";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
 import { useFormik } from "formik";
-import firebase from '../../config/firebase';
+import firebase from "../../config/firebase";
 import * as Yup from "yup";
+import { useDispatch } from "react-redux";
+import { useHistory } from "react-router-dom";
 import "./style.css";
 
 function Userform() {
+  const [downloadUrl, setDownloadUrl] = useState([]);
 
-const [img, setImg] = useState([])
+  const dispatch = useDispatch();
+  const history = useHistory();
+
+  const onImgUpload = (e) => {
+    const random = Math.random * 45545 * 54545454;
+    const imgName = e.target.files[0].name + random;
+    firebase
+      .storage()
+      .ref()
+      .child(imgName)
+      .put(e.target.files[0])
+      .then(function (snapshot) {
+        var progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+        console.log("Upload is " + progress + "% done");
+        snapshot.ref.getDownloadURL().then((downloadURL) => {
+          setDownloadUrl((prevState) => [...prevState, downloadURL]);
+        });
+      });
+  };
 
   const formik = useFormik({
     initialValues: {
-      name:"",
+      name: "",
       email: "",
       password: "",
     },
-    
+
     validationSchema: Yup.object({
-      name: Yup.string().min(3, "Minimum 3 characters").max(20, "Maximum 20 characters").required(" Name is Required!"),
-      email: Yup.string().email("Invalid email format").required("Email is Required!"),
+      name: Yup.string()
+        .min(3, "Minimum 3 characters")
+        .max(20, "Maximum 20 characters")
+        .required(" Name is Required!"),
+      email: Yup.string()
+        .email("Invalid email format")
+        .required("Email is Required!"),
       password: Yup.string()
         .min(8, "Minimum 8 characters")
-        .required("Password is Required!")
+        .required("Password is Required!"),
     }),
     onSubmit: (values) => {
       alert(JSON.stringify(values));
-      firebase.auth().createUserWithEmailAndPassword(values.email, values.password)
-      .then(({user})=>{
-            console.log(user.uid, "USer Uid")
-            // const random = Math.random * 45545 * 54545454; 
-            // const imgName = e.target.files[0].name + random
-            // firebase.storage().ref().child(imgName).put(e.target.files[0])
-            //   .then(function (snapshot) {
-            //     var progress =
-            //       (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
-            //     console.log("Upload is " + progress + "% done");
-            //     snapshot.ref.getDownloadURL().then((downloadURL) => {
-            //       setfileDownlodedUrl((prevState) => [...prevState, downloadURL]);
-                  
-            //       const userInfo = {
-            //           name: values.displayName,
-            //           email: values.email,
-            //           imageUrl: downloadURL,
-            //           uid: values.uid,
-            //         };
-            //         firebase.database().ref("/").child(`users/${user.uid}`)
-            //         .set(userInfo)
-            //         .then(() => console.log("User Add SuccessFully"));
-            //       dispatch({ type: "SETUSER", payload: userInfo });
-  
-            //       });
-            //   });
-          
-      })
-      .catch(function(error) {
-        // Handle Errors here.
-        var errorCode = error.code;
-        var errorMessage = error.message;
-        // ...
-      });
-     
-    }
+      const { email, password, name } = values;
+      firebase
+        .auth()
+        .createUserWithEmailAndPassword(email, password)
+        .then(({ user }) => {
+          console.log(user.uid, "USer Uid");
+          const userInfo = {
+            name: name,
+            email: email,
+            imageUrl: downloadUrl,
+            uid: user.uid,
+            timestamp: firebase.database.ServerValue.TIMESTAMP,
+          };
+          console.log(userInfo, "REgister USer Info");
+          firebase
+            .database()
+            .ref("/")
+            .child(`users/${user.uid}`)
+            .set(userInfo)
+            .then(() => console.log("User Add SuccessFully"));
+          dispatch({ type: "SETUSER", payload: userInfo });
+          history.replace("/");
+        })
+        .catch((err) => {
+          console.error("error Upload Data", err);
+        });
+    },
   });
 
   return (
@@ -110,7 +127,7 @@ const [img, setImg] = useState([])
               </svg>
             </div>
             <Form onSubmit={formik.handleSubmit}>
-            <FormGroup>
+              <FormGroup>
                 <Label for="username">Enter Your Name</Label>
                 <Input
                   type="text"
@@ -155,20 +172,20 @@ const [img, setImg] = useState([])
                 )}
               </FormGroup>
               <FormGroup>
-                  <Label for="file">Product Image</Label>
-                  <Input
-                    type="file"
-                    name="image"
-                    id="image"
-                    onChange={(e)=> setImg(e.target.files)}
-                  />
-                </FormGroup>
+                <Label for="file">Product Image</Label>
+                <Input
+                  type="file"
+                  name="image"
+                  id="image"
+                  onChange={(e) => onImgUpload(e)}
+                />
+              </FormGroup>
               <button className="btn btn-info btn-block " type="submit">
                 Register
               </button>
             </Form>
             <div className="my-3 text-bold d-flex routeLink">
-            <Link to="/login">Login </Link>
+              <Link to="/login">Login </Link>
 
               <Link to="/" className="">
                 Go to Home

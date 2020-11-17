@@ -9,7 +9,7 @@ function LoginButton(props) {
     const history = useHistory()
     return (
         <div>
-            <Link to="/register"><button className='loginBtn'><span className='text-center'>Continue with Email</span></button>
+            <Link to="/login"><button className='loginBtn'><span className='text-center'>Continue with Email</span></button>
             </Link>
             <button className='loginBtn' onClick={()=> props.googleLogin(history)}><span className='text-center'>Continue with Google</span></button>
             <button className='loginBtn' onClick={()=> props.facebookLogin(history)}><span className='text-center'>Continue with Facebook</span></button>
