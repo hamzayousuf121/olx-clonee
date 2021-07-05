@@ -2,11 +2,19 @@ import firebase from "../../config/firebase";
 
 export const getAllProducts = () => {
     return(dispatch) => {
-    firebase.database().ref('/').child('products').on('child_added', 
-    (snapshots) => {
-        var data = snapshots.val();
-        dispatch({type: 'SETPRODUCT', payload:data})
-    })
+    firebase.database().ref('/').child('products').get()
+    .then((snapshot) => {
+        if (snapshot.exists()) {
+            var data = snapshot.val();
+            console.log(Object.values(data))
+            dispatch({type: 'SETPRODUCT', payload:Object.values(data)})
+        } else {
+            console.log("No data available");
+        }
+        }).catch((error) => {
+        console.error(error);
+        });
+    
 }
 }
 //   export const filterCategory = (category) => {

@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useEffect} from "react";
 import { Card, CardImg, CardBody, CardTitle, CardSubtitle } from "reactstrap";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
@@ -25,6 +25,11 @@ const responsive = {
 };
 
 function Featured({ deviceType, }) {
+
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [])
+
   const category = useSelector((state) => state.filterCategory);
   return (
     <div className="featured__main">
@@ -48,20 +53,20 @@ function Featured({ deviceType, }) {
         dotListClass="custom-dot-list-style"
         itemClass="carousel-item-padding-40-px"
       >
-        {category.map((item, i) => (
+        {category?.map((item, i) => (
           <div key={i}>
             <Card>
               <CardImg
                 className="CardImg"
                 top
                 width="100%"
-                src={item.images[0]}
-                alt={item.title}
+                src={(item?.images) ? item?.images[0] : 'https://images.unsplash.com/photo-1523275335684-37898b6baf30?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8cHJvZHVjdHxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&w=1000&q=80'}
+                alt={item?.title}
               />
               <CardBody>
-                <CardTitle>{item.title}</CardTitle>
-                <CardSubtitle>{item.price}</CardSubtitle>
-                <CardSubtitle>{item.category}</CardSubtitle>
+                <CardTitle>{item?.title}</CardTitle>
+                <CardSubtitle>{item?.price}</CardSubtitle>
+                <CardSubtitle>{item?.category}</CardSubtitle>
               </CardBody>
             </Card>
           </div>

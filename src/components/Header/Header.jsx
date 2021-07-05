@@ -32,8 +32,7 @@ useEffect(() => {
       history.push(`/search/${searchField}`)}
     }
 
-console.log(props.currentUser, "Header Cuuuent USEr")
-  return (
+    return (
     <>
       <Login toggle={toggle} modal={isOpen} />
       <Navbar color="light" light fixed='true' className='headerNavbar'>

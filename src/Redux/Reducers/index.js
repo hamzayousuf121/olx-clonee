@@ -15,8 +15,8 @@ export default (state = INITIAL_STATE, action) => {
         case 'SETPRODUCT' :
             return ({
                 ...state,
-                products:  [...state.products, action.payload],
-                filterCategory:  [...state.products, action.payload]
+                products:  action.payload,
+                filterCategory:  action.payload
             })
 
         case 'SETFILTERCATEGORY' :
